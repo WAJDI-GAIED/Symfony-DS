@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}AllCars{% endblock %}
+
+{% block body %}
+
+<style>
+    body{background:#eee}.ratings i{font-size: 16px;color: red}.strike-text{color: red;text-decoration: line-through}.product-image{width: 100%}.dot{height: 7px;width: 7px;margin-left: 6px;margin-right: 6px;margin-top: 3px;background-color: blue;border-radius: 50%;display: inline-block}.spec-1{color: #938787;font-size: 15px}h5{font-weight: 400}.para{font-size: 16px}
+</style>
+ 
+
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-12">
+            <div class="card-deck mt-5 mb-5">
+                <div class="card">
+                    <img class="card-img-top" src="https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Card image cap">
+                    <div class="card-body">
+                    <h1 class="card-title">{{onecar.marque}}</h1>
+                    <div class="d-flex flex-row align-items-center">
+                        <h4 class="mr-1">{{onecar.prix}}  </h4><span class="strike-text">   310.999 DT</span>
+                    </div>
+                    <h3 class="text-justify text-truncate para mb-0"><span class="text-primary blockquote">Couleur : </span> {{onecar.couleur}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

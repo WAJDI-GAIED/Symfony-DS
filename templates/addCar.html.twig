@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}AddCar{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+
+        <div>
+            {{ form_start(form) }}
+            <h1 class="text-center font-weight-dark mt-2">Ajouter une voiture </h1>
+            {{ form_label(form.marque) }}
+            {{ form_widget(form.marque,{'attr':{'class':'form-control'}}) }}
+            <div class="inupt-group mb-3">
+                
+            </div>
+                        
+            <label for="basic-url">Couleur</label>
+            <div class="input-group mb-3">
+                {{ form_widget(form.couleur,{'attr':{'class':'form-control'}}) }}
+            </div>
+            
+            
+            <label for="basic-url">Prix</label>
+            <div class="input-group mb-3">
+                {{ form_widget(form.prix,{'attr':{'class':'form-control'}}) }}
+                <div class="input-group-append">
+                  <span class="input-group-text">DT</span>
+                </div>
+            </div>
+                
+            <div class="container">
+                <div class="row">
+                    <button type="submit" class="btn btn-success m-2 align-center btn-lg btn-block my-1">Envoyer</button>
+                </div>
+
+            </div>
+
+            {{ form_end(form) }}   
+        </div>
+
+    
+</div>
+
+{% endblock %}

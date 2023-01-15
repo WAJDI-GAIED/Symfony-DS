@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}AllCars{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+      {% for message in app.flashes('notice') %}
+      <div class="alert p-3 mb-2 bg-light text-primary border border-primary" role="alert">
+          {{ message }}
+      </div>
+      {% endfor %}
+    </div>
+<table class="table m-3">
+    <thead class="table-active">
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Marque</th>
+        <th scope="col">Coleur</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody  class="bg-light">
+
+      {% for car in cars %}  
+      <tr>
+          <th  scope="row">{{car.id}}</th>
+          <td>{{car.marque}}</td>
+          <td>{{car.couleur}}</td>
+          <td>{{car.prix}}</td>
+          <td>
+              <a href="{{path("details",{id:car.id})}}" class="btn btn-sm btn-success"><i class="fa fa-eye"></i></a>
+
+          </td>
+      </tr>
+  {% endfor  %}
+    </tbody>
+  </table>
+
+{% endblock %}
